@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Family tree
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="this.data as people">
+    <div *ngFor = "let type of Object.keys(people)">
+      <h1>{{type}}</h1>
+        <ion-item *ngFor = "let person of people[type]">
+            <ion-label>{{person.naam}}</ion-label>
+        </ion-item>
+    </div>
+  </ion-list> 
+</ion-content>
